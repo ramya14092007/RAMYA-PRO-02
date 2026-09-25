@@ -1,13 +1,15 @@
-CREATE TABLE student
-(
-studentID INT(5)PRIMARY KEY,
-studentName VARCHAR(20) NOT NULL,
-DOB DATE NOT NULL,
-Gender VARCHAR(10) NOT NULL,
-DepartmentID INT(5),
-CONSTRAINT UQ_studentNme UNIQUE (studentName),
-CONSTRAINT FK_Department
-FOREIGN KEY (DepartmentID)
-  REFERENCES Department(DepartmentID)
-  );
-  desc student;
+CREATE DATABASE IF NOT EXISTS assignmentdb;
+USE assignmentdb;
+
+DROP TABLE IF EXISTS Course;
+DROP TABLE IF EXISTS Student;
+DROP TABLE IF EXISTS Faculty;
+DROP TABLE IF EXISTS Department;
+
+CREATE TABLE Department (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Faculty (
+    faculty_id
